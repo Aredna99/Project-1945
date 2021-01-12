@@ -26,18 +26,18 @@ Inside the game, in the top left side of the screen, you will see the number of 
 
 On the bottom of the screen you will see an Info Panel about the statistics of the current game:
 - a Lifes Counter in the bottom left corner:  
-1) It can reach a maximum of 4 lifes;  
-2) The lifes can be obtained collecting perks during a game;  
-3) The lifes can be lost when your Energy Bar reachs the 0;
-4) When you lose a life you will be unable to move your Plane for some seconds and it will blink for the same amount of time;
-5) When you will lose all your lifes, your plane will EXPLODE and the game will be restarted after some seconds!
+•) It can reach a maximum of 4 lifes;  
+•) The lifes can be obtained collecting perks during a game;  
+•) The lifes can be lost when your Energy Bar reachs the 0;
+•) When you lose a life you will be unable to move your Plane for some seconds and it will blink for the same amount of time;
+•) When you will lose all your lifes, your plane will EXPLODE and the game will be restarted after some seconds!
 
 - an Energy Bar, below the Lifes Counter:  
-1) Every time it is empty, you will lose 1 life. Then if you have more than 0 Lifes, it will be refilled again;  
-2) Losing Energy can occur hitting other planes or bullets;
+•) Every time it is empty, you will lose 1 life. Then if you have more than 0 Lifes, it will be refilled again;  
+•) Losing Energy can occur hitting other planes or bullets;
 
 - a Score Counter, in the bottom middle part of the screen:  
-1) You will receive Score Points every time you destroy another plane or bullet or get a perk;
+•) You will receive Score Points every time you destroy another plane;
 
 ![Info Panel](resources/assets/ui/bottom.png)
 
@@ -56,9 +56,7 @@ Your plane will be able to shoot a bullet only after some time by pressing the c
 
 ## Controls
 
-![Player's plane](resources/assets/ui/Icon.ico)
-
-### Player
+### Player ![Player's plane](resources/assets/ui/Icon.ico)
 -Player movements: Arrow Keys
 -Shoot: Space bar/ X Key
 
