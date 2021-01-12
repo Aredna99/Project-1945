@@ -1,6 +1,6 @@
 # Project 1945 by Aredna
 
-![Banner of the project](./Project_1945_source/resources/extra/Title.png)
+![Banner of the project](./resources/extra/Title.png)
 
 Project 1945 is a top down scroller game made with SDL2, CMake and programmed in C as a project of study for the Italian Videogames Academy for the 3rd year course of Videogames programming.
 The game is based on the old videogame [1945: The Final Front](https://www.youtube.com/watch?v=uBIbxobSUcY) of the 2002.
@@ -15,7 +15,7 @@ Install clang as compiler.
 Install CMake and use the compiling kit inside Visual Studio Code named amd64 to make builds.
 Inside Visual Studio Code make a Delete Cache and Reconfigure to refresh the project paths.
 
-![Loading image](./Project_1945_source/resources/loading.gif)
+![Loading image](./resources/loading.gif)
 
 ## Game Description
 In Project 1945 you will be able to Embark yourself in a 640x480 resolution adventure and save in the Main Menu your Best Scores and all your Boss Kills.
@@ -39,7 +39,7 @@ On the bottom of the screen you will see an Info Panel about the statistics of t
 - a Score Counter, in the bottom middle part of the screen:  
 1) You will receive Score Points every time you destroy another plane or bullet or get a perk;
 
-![Info Panel](./Project_1945_source/resources/ui/bottom.png)
+![Info Panel](./resources/ui/bottom.png)
 
 Your plane is positioned in the bottom middle part of the screen, at the border with the below Info Panel. You will not be able to move into the Info Panel.
 Losing all your Lifes or defeating the Final Boss will let the game restart, if you want to quit and return to the Main Menu just press the "Esc" button.
@@ -47,45 +47,34 @@ During the game some bullets, planes, perks and islands will be spawned in the t
 The other planes and the Final Boss will not follow always a straight direction and sometimes they will move horizzontally to the rigth or to the left direction.
 The other planes sometimes will shoot some bullets ahead of them. You can also shoot your bullets.
 
-![Island1](./Project_1945_source/resources/map/island1.png) ![Island2](./Project_1945_source/resources/map/island2.png) ![Island3](./Project_1945_source/resources/map/island3.png)
+![Island1](./resources/map/island1.png) ![Island2](./resources/map/island2.png) ![Island3](./resources/map/island3.png)
 
 When you lost a life and your plane is blinking you cannot be damaged or obtain any sort of Perk.
 Your plane will be able to shoot a bullet only after some time by pressing the correct button.
 
-![Life perks](./Project_1945_source/resources/player/myplane_strip3.png)
 
-## Perks
-
-Every time you obtain a Perk you will be rewarded with some Score Points. When you lost a life and your plane is blinking you cannot obtain any kind of Perk.
-
-There are 2 kind of Perks that can be spawned and obtrained:
-- Life Perk: 
-1) Will get you 1 Life;
-
-- Special Bullets Perk:
-1) Will grant you a bigger amount of bullets to be shooted for a short period of time (so press fastly your Space Bar);
 
 ## Controls
 
-![Player's plane](./Project_1945_source/resources/ui/Icon.png)
+![Player's plane](./resources/ui/Icon.png)
 
 ### Player
 -Player movements: Arrow Keys
--Shoot: Space bar
+-Shoot: Space bar/ X Key
 
-![Player's bullet](./Project_1945_source/resources/player/bullet.png)
+![Player's bullet](./resources/player/bullet.png)
 
 ### Game Scene
 
 -Return to Main Menu: Esc
 
-![Water background](./Project_1945_source/resources/map/water.png)
+![Water background](./resources/map/water.png)
 
 ### Main Menu
 -Start a game: E
 -Quit the game: Q
 
-![Water background](./Project_1945_source/resources/player/explosion2_strip7.png)
+![Water background](./resources/player/explosion2_strip7.png)
 
 ## Copyright
 Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) 
