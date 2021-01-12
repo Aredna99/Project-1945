@@ -1,0 +1,3 @@
+D:/AIV/III°Anno/Progetti/Project-1945-by-Aredna/build/CMakeFiles/SDLWindowPrj.dir
+D:/AIV/III°Anno/Progetti/Project-1945-by-Aredna/build/CMakeFiles/ALL_BUILD.dir
+D:/AIV/III°Anno/Progetti/Project-1945-by-Aredna/build/CMakeFiles/ZERO_CHECK.dir

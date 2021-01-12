@@ -124,7 +124,7 @@ typedef enum {
     MIX_FADING_IN
 } Mix_Fading;
 
-/* These are types of music files (not libraries used to load them) */
+/* These are types of bg_music files (not libraries used to load them) */
 typedef enum {
     MUS_NONE,
     MUS_CMD,
@@ -139,7 +139,7 @@ typedef enum {
     MUS_OPUS
 } Mix_MusicType;
 
-/* The internal format for a music chunk interpreted via mikmod */
+/* The internal format for a bg_music chunk interpreted via mikmod */
 typedef struct _Mix_Music Mix_Music;
 
 /* Open the mixer with a certain audio format */
@@ -160,16 +160,16 @@ extern DECLSPEC int SDLCALL Mix_AllocateChannels(int numchans);
  */
 extern DECLSPEC int SDLCALL Mix_QuerySpec(int *frequency,Uint16 *format,int *channels);
 
-/* Load a wave file or a music (.mod .s3m .it .xm) file */
+/* Load a wave file or a bg_music (.mod .s3m .it .xm) file */
 extern DECLSPEC Mix_Chunk * SDLCALL Mix_LoadWAV_RW(SDL_RWops *src, int freesrc);
 #define Mix_LoadWAV(file)   Mix_LoadWAV_RW(SDL_RWFromFile(file, "rb"), 1)
 extern DECLSPEC Mix_Music * SDLCALL Mix_LoadMUS(const char *file);
 
-/* Load a music file from an SDL_RWop object (Ogg and MikMod specific currently)
+/* Load a bg_music file from an SDL_RWop object (Ogg and MikMod specific currently)
    Matt Campbell (matt@campbellhome.dhs.org) April 2000 */
 extern DECLSPEC Mix_Music * SDLCALL Mix_LoadMUS_RW(SDL_RWops *src, int freesrc);
 
-/* Load a music file from an SDL_RWop object assuming a specific format */
+/* Load a bg_music file from an SDL_RWop object assuming a specific format */
 extern DECLSPEC Mix_Music * SDLCALL Mix_LoadMUSType_RW(SDL_RWops *src, Mix_MusicType type, int freesrc);
 
 /* Load a wave file of the mixer format from a memory buffer */
@@ -180,9 +180,9 @@ extern DECLSPEC Mix_Chunk * SDLCALL Mix_QuickLoad_RAW(Uint8 *mem, Uint32 len);
 
 /* Free an audio chunk previously loaded */
 extern DECLSPEC void SDLCALL Mix_FreeChunk(Mix_Chunk *chunk);
-extern DECLSPEC void SDLCALL Mix_FreeMusic(Mix_Music *music);
+extern DECLSPEC void SDLCALL Mix_FreeMusic(Mix_Music *bg_music);
 
-/* Get a list of chunk/music decoders that this build of SDL_mixer provides.
+/* Get a list of chunk/bg_music decoders that this build of SDL_mixer provides.
    This list can change between builds AND runs of the program, if external
    libraries that add functionality become available.
    You must successfully call Mix_OpenAudio() before calling these functions.
@@ -208,10 +208,10 @@ extern DECLSPEC int SDLCALL Mix_GetNumMusicDecoders(void);
 extern DECLSPEC const char * SDLCALL Mix_GetMusicDecoder(int index);
 extern DECLSPEC SDL_bool SDLCALL Mix_HasMusicDecoder(const char *name);
 
-/* Find out the music format of a mixer music, or the currently playing
-   music, if 'music' is NULL.
+/* Find out the bg_music format of a mixer bg_music, or the currently playing
+   bg_music, if 'bg_music' is NULL.
 */
-extern DECLSPEC Mix_MusicType SDLCALL Mix_GetMusicType(const Mix_Music *music);
+extern DECLSPEC Mix_MusicType SDLCALL Mix_GetMusicType(const Mix_Music *bg_music);
 
 /* Set a function that is called after all mixing is performed.
    This can be used to provide real-time visual display of the audio stream
@@ -219,17 +219,17 @@ extern DECLSPEC Mix_MusicType SDLCALL Mix_GetMusicType(const Mix_Music *music);
 */
 extern DECLSPEC void SDLCALL Mix_SetPostMix(void (SDLCALL *mix_func)(void *udata, Uint8 *stream, int len), void *arg);
 
-/* Add your own music player or additional mixer function.
-   If 'mix_func' is NULL, the default music player is re-enabled.
+/* Add your own bg_music player or additional mixer function.
+   If 'mix_func' is NULL, the default bg_music player is re-enabled.
  */
 extern DECLSPEC void SDLCALL Mix_HookMusic(void (SDLCALL *mix_func)(void *udata, Uint8 *stream, int len), void *arg);
 
-/* Add your own callback for when the music has finished playing or when it is
+/* Add your own callback for when the bg_music has finished playing or when it is
  * stopped from a call to Mix_HaltMusic.
  */
 extern DECLSPEC void SDLCALL Mix_HookMusicFinished(void (SDLCALL *music_finished)(void));
 
-/* Get a pointer to the user data for the current music hook */
+/* Get a pointer to the user data for the current bg_music hook */
 extern DECLSPEC void * SDLCALL Mix_GetMusicHookData(void);
 
 /*
@@ -259,7 +259,7 @@ extern DECLSPEC void SDLCALL Mix_ChannelFinished(void (SDLCALL *channel_finished
  *  are significant, or just leaves it be, if you prefer. You can do whatever
  *  you like to the buffer, though, and it will continue in its changed state
  *  down the mixing pipeline, through any other effect functions, then finally
- *  to be mixed with the rest of the channels and music for the final output
+ *  to be mixed with the rest of the channels and bg_music for the final output
  *  stream.
  *
  * DO NOT EVER call SDL_LockAudio() from your callback function!
@@ -306,7 +306,7 @@ typedef void (SDLCALL *Mix_EffectDone_t)(int chan, void *udata);
  * You may also register a special effect function that is to be run after
  *  final mixing occurs. The rules for these callbacks are identical to those
  *  in Mix_RegisterEffect, but they are run after all the channels and the
- *  music have been mixed into a single stream, whereas channel-specific
+ *  bg_music have been mixed into a single stream, whereas channel-specific
  *  effects run on a given channel before any other mixing occurs. These
  *  global effect callbacks are call "posteffects". Posteffects only have
  *  their Mix_EffectDone_t function called when they are unregistered (since
@@ -550,11 +550,11 @@ extern DECLSPEC int SDLCALL Mix_GroupNewer(int tag);
 #define Mix_PlayChannel(channel,chunk,loops) Mix_PlayChannelTimed(channel,chunk,loops,-1)
 /* The same as above, but the sound is played at most 'ticks' milliseconds */
 extern DECLSPEC int SDLCALL Mix_PlayChannelTimed(int channel, Mix_Chunk *chunk, int loops, int ticks);
-extern DECLSPEC int SDLCALL Mix_PlayMusic(Mix_Music *music, int loops);
+extern DECLSPEC int SDLCALL Mix_PlayMusic(Mix_Music *bg_music, int loops);
 
-/* Fade in music or a channel over "ms" milliseconds, same semantics as the "Play" functions */
-extern DECLSPEC int SDLCALL Mix_FadeInMusic(Mix_Music *music, int loops, int ms);
-extern DECLSPEC int SDLCALL Mix_FadeInMusicPos(Mix_Music *music, int loops, int ms, double position);
+/* Fade in bg_music or a channel over "ms" milliseconds, same semantics as the "Play" functions */
+extern DECLSPEC int SDLCALL Mix_FadeInMusic(Mix_Music *bg_music, int loops, int ms);
+extern DECLSPEC int SDLCALL Mix_FadeInMusicPos(Mix_Music *bg_music, int loops, int ms, double position);
 #define Mix_FadeInChannel(channel,chunk,loops,ms) Mix_FadeInChannelTimed(channel,chunk,loops,ms,-1)
 extern DECLSPEC int SDLCALL Mix_FadeInChannelTimed(int channel, Mix_Chunk *chunk, int loops, int ms, int ticks);
 
@@ -595,16 +595,16 @@ extern DECLSPEC void SDLCALL Mix_Pause(int channel);
 extern DECLSPEC void SDLCALL Mix_Resume(int channel);
 extern DECLSPEC int SDLCALL Mix_Paused(int channel);
 
-/* Pause/Resume the music stream */
+/* Pause/Resume the bg_music stream */
 extern DECLSPEC void SDLCALL Mix_PauseMusic(void);
 extern DECLSPEC void SDLCALL Mix_ResumeMusic(void);
 extern DECLSPEC void SDLCALL Mix_RewindMusic(void);
 extern DECLSPEC int SDLCALL Mix_PausedMusic(void);
 
-/* Set the current position in the music stream.
+/* Set the current position in the bg_music stream.
    This returns 0 if successful, or -1 if it failed or isn't implemented.
-   This function is only implemented for MOD music formats (set pattern
-   order number) and for OGG, FLAC, MP3_MAD, MP3_MPG and MODPLUG music
+   This function is only implemented for MOD bg_music formats (set pattern
+   order number) and for OGG, FLAC, MP3_MAD, MP3_MPG and MODPLUG bg_music
    (set position in seconds), at the moment.
 */
 extern DECLSPEC int SDLCALL Mix_SetMusicPosition(double position);
@@ -615,7 +615,7 @@ extern DECLSPEC int SDLCALL Mix_SetMusicPosition(double position);
 extern DECLSPEC int SDLCALL Mix_Playing(int channel);
 extern DECLSPEC int SDLCALL Mix_PlayingMusic(void);
 
-/* Stop music and set external music playback command */
+/* Stop bg_music and set external bg_music playback command */
 extern DECLSPEC int SDLCALL Mix_SetMusicCMD(const char *command);
 
 /* Synchro value is set by MikMod from modules while playing */

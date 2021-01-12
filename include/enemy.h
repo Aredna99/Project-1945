@@ -8,9 +8,9 @@ typedef struct {
     enemy_bullet** bullets;
     boolean is_active;
 
-    int bullets_count;
-    float default_shoot_cd;
-    float shoot_cd;
+    int bullets_count;              //max number of active bullets that the enemy can have in the same frame 
+    float default_shoot_cd;         //time variable wich enemy can shoot
+    float shoot_cd;                 //time before can shoot
 } enemy;
 
 enemy* create_enemy();

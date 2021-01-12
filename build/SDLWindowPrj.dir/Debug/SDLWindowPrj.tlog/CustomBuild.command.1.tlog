@@ -1,0 +1,10 @@
+^D:\AIV\III°ANNO\PROGETTI\PROJECT-1945-BY-AREDNA\CMAKELISTS.TXT
+setlocal
+"D:\Program Files (x86)\CMAKE\bin\cmake.exe" -SD:/AIV/III°Anno/Progetti/Project-1945-by-Aredna -BD:/AIV/III°Anno/Progetti/Project-1945-by-Aredna/build --check-stamp-file D:/AIV/III°Anno/Progetti/Project-1945-by-Aredna/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -4,7 +4,7 @@
 
 typedef struct {
     actor* actor; 
-    boolean is_active;
+    boolean is_active;      //check if an island should be draw or not
 } island;
 
 island* create_island();

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\actor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\audio_mgr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\bullet.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\enemy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\font_mgr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\input.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\island.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\player.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\renderer_mgr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\scene.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\utils.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\actor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\audio_mgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\bullet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\enemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\font_mgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\island.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\render_mgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\CMakelists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{0E73FA6C-E59B-3272-9F6C-3103EF706326}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{E9B11A34-1E39-3FFF-8EE6-9E8159298A9F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

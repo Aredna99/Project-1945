@@ -1,7 +1,10 @@
 #ifndef UTILS_H
 #define UTILS_H
 #include "SDL.h"
+#include "SDL_image.h"
 #include "render_mgr.h"
+#include "audio_mgr.h"
+#include "font_mgr.h"
 
 char title[100];
 float delta_time;

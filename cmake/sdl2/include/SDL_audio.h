@@ -806,7 +806,7 @@ extern DECLSPEC Uint32 SDLCALL SDL_GetQueuedAudioSize(SDL_AudioDeviceID dev);
  *  This will not prevent playback of queued audio that's already been sent
  *  to the hardware, as we can not undo that, so expect there to be some
  *  fraction of a second of audio that might still be heard. This can be
- *  useful if you want to, say, drop any pending music during a level change
+ *  useful if you want to, say, drop any pending bg_music during a level change
  *  in your game.
  *
  *  You may not queue audio on a device that is using an application-supplied

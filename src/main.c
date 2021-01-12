@@ -3,7 +3,7 @@
 #include <SDL_ttf.h>
 #include <scene.h>
 #include <time.h>
-
+#include <audio_mgr.h>
 
 typedef struct {
     float x;
@@ -17,8 +17,9 @@ int main() {
     create_renderer();
 
     init_utils();
-
-    player* pl = create_player();
+    Init_FontMgr();
+    init_audiomgr(&audiomgr);
+    
     scene* my_scene = create_scene();
 
     boolean* done = false;   
@@ -29,7 +30,7 @@ int main() {
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
         SDL_RenderClear(renderer);
         
-        draw_scene(my_scene, pl);
+        draw_scene(my_scene);
 
         SDL_Delay(11);
 

@@ -9,10 +9,10 @@ typedef struct {
     SDL_Texture* texture;
     SDL_Rect* rect;
     SDL_Rect* anim_rect;
-    int anim_frames;
-    int curr_anim_frame;
-    float max_anim_time;
-    float curr_anim_time;
+    int anim_frames;            //number of frame for the caracther_sheet in the same row
+    int curr_anim_frame;        //actual frame of the character_sheet 
+    float max_anim_time;        //time for change frame
+    float curr_anim_time;       //
     float speed;
     int max_health;
     int health;

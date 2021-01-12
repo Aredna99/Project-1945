@@ -12,6 +12,7 @@ scene* create_scene() {
     new_scene->enemy_count = 10;
     new_scene->island_count = 10;
     
+    new_scene->player = (player*)malloc(sizeof(player));
     new_scene->enemies = (enemy**)malloc(new_scene->enemy_count * sizeof(enemy*));
     new_scene->islands = (island**)malloc(new_scene->island_count * sizeof(island*));
     new_scene->bottom_ui_rect = (SDL_Rect*)malloc(sizeof(SDL_Rect));
@@ -34,6 +35,7 @@ scene* create_scene() {
     new_scene->ui_player_life_rect->x = 12;
     new_scene->ui_player_life_rect->y = new_scene->hp_bar_rect->y - new_scene->ui_player_life_rect->h;
 
+    new_scene->player = create_player();
     for (int i = 0; i < new_scene->enemy_count; i++)
     {
         new_scene->enemies[i] = (enemy*)malloc(sizeof(enemy));
@@ -113,41 +115,42 @@ void spawn_island(scene* scene) {
     scene->cd_island_spawn += delta_time;
 }
 
-void update_player_life(scene* my_scene, player* my_player) {
-    my_scene->hp_bar_rect->w = (my_scene->max_hp_bar_width * my_player->actor->health) / my_player->actor->max_health;
+void update_player_life(scene* my_scene) {
+    my_scene->hp_bar_rect->w = (my_scene->max_hp_bar_width * my_scene->player->actor->health) / my_scene->player->actor->max_health;
 }
 
-void draw_ui(scene* my_scene ,player* my_player) {
+void draw_ui(scene* my_scene) {
     SDL_RenderCopy(renderer, my_scene->bg_ui_bottom_texture, NULL, my_scene->bottom_ui_rect);
     SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);   
     SDL_RenderFillRect(renderer, my_scene->hp_bar_rect);
-    for (int i = 0; i < my_player->lifes; i++)
+    for (int i = 0; i < my_scene->player->lifes; i++)
     {
         my_scene->ui_player_life_rect->x = (my_scene->ui_player_life_rect->w * i) + 12;
         SDL_RenderCopy(renderer, my_scene->ui_player_life_texture, NULL, my_scene->ui_player_life_rect);
     }
+    Draw_Score();
 }
 
-void check_enemy_bullet_collision(scene* my_scene, player* my_player) {
+void check_enemy_bullet_collision(scene* my_scene) {
     for (int i = 0; i < my_scene->enemy_count; i++)
     {
         for (int j = 0; j < my_scene->enemies[i]->bullets_count; j++)
         {
             if(my_scene->enemies[i]->bullets[j]->bullet->is_active) {
                 // collision enemy_bullet ---> player
-                if(my_scene->enemies[i]->bullets[j]->bullet->is_active && my_player->is_alive && !my_player->is_invulnerable){
-                    if(SDL_HasIntersection(my_scene->enemies[i]->bullets[j]->bullet->rect, my_player->actor->rect)) {    
+                if(my_scene->enemies[i]->bullets[j]->bullet->is_active && my_scene->player->is_alive && !my_scene->player->is_invulnerable){
+                    if(SDL_HasIntersection(my_scene->enemies[i]->bullets[j]->bullet->rect, my_scene->player->actor->rect)) {    
                         my_scene->enemies[i]->bullets[j]->bullet->is_active = false;
-                        player_take_damage(my_player, my_scene->enemies[i]->bullets[j]->bullet->damage);
+                        player_take_damage(my_scene->player, my_scene->enemies[i]->bullets[j]->bullet->damage);
                         return;
                     }
                 }
                 // collision enemy_bullet ---> player_bullet
-                for (int k = 0; k < my_player->bullets_count; k++)
+                for (int k = 0; k < my_scene->player->bullets_count; k++)
                 {
-                    if(my_scene->enemies[i]->bullets[j]->bullet->is_active && my_player->bullets[k]->bullet->is_active && SDL_HasIntersection(my_scene->enemies[i]->bullets[j]->bullet->rect, my_player->bullets[k]->bullet->rect)){
+                    if(my_scene->enemies[i]->bullets[j]->bullet->is_active && my_scene->player->bullets[k]->bullet->is_active && SDL_HasIntersection(my_scene->enemies[i]->bullets[j]->bullet->rect, my_scene->player->bullets[k]->bullet->rect)){
                         my_scene->enemies[i]->bullets[j]->bullet->is_active = false;
-                        my_player->bullets[k]->bullet->is_active = false;
+                        my_scene->player->bullets[k]->bullet->is_active = false;
                         return;
                     }
                 }
@@ -156,28 +159,28 @@ void check_enemy_bullet_collision(scene* my_scene, player* my_player) {
     }
 }
 
-void check_enemy_collision(scene* my_scene, player* my_player) {
+void check_enemy_collision(scene* my_scene) {
     for (int i = 0; i < my_scene->enemy_count; i++)
     {
         if(my_scene->enemies[i]->is_active) {
-            if(my_player->is_alive && !my_player->is_invulnerable  && my_scene->enemies[i]->is_active) {
+            if(my_scene->player->is_alive && !my_scene->player->is_invulnerable  && my_scene->enemies[i]->is_active) {
                 // collisione enemy ---> player
-                if(SDL_HasIntersection(my_scene->enemies[i]->actor->rect, my_player->actor->rect)) {
+                if(SDL_HasIntersection(my_scene->enemies[i]->actor->rect, my_scene->player->actor->rect)) {
                     my_scene->enemies[i]->is_active = false;
-                    player_take_damage(my_player, 10);
-                    player_add_score(my_player, 10);
+                    player_take_damage(my_scene->player, 10);
+                    player_add_score(my_scene, 10);
                     return;
                 }
             }
 
-            for (int j = 0; j < my_player->bullets_count; j++)
+            for (int j = 0; j < my_scene->player->bullets_count; j++)
             {
                 // collision enemy ---> player_bullet
-                if(my_player->bullets[j]->bullet->is_active && SDL_HasIntersection(my_scene->enemies[i]->actor->rect, my_player->bullets[j]->bullet->rect)) {
-                    my_player->bullets[j]->bullet->is_active = false;
-                    enemy_take_damage(my_scene->enemies[i], my_player->bullets[j]->bullet->damage);
+                if(my_scene->player->bullets[j]->bullet->is_active && SDL_HasIntersection(my_scene->enemies[i]->actor->rect, my_scene->player->bullets[j]->bullet->rect)) {
+                    my_scene->player->bullets[j]->bullet->is_active = false;
+                    enemy_take_damage(my_scene->enemies[i], my_scene->player->bullets[j]->bullet->damage);
                     if(!my_scene->enemies[i]->is_active) {
-                        player_add_score(my_player, 10);
+                        player_add_score(my_scene, 10);
                     }
                     return;
                 }
@@ -186,16 +189,17 @@ void check_enemy_collision(scene* my_scene, player* my_player) {
     }
 }
 
-void player_add_score(player* player, int points) {
-    player->score += points;
+void player_add_score(scene* scene, int points) {
+    scene->player->score += points;
+    change_score_text(scene->hp_bar_rect, scene->max_hp_bar_width, scene->player->score);
 }
 
-void check_collisions(scene* scene, player* player) {
-    check_enemy_bullet_collision(scene, player);
-    check_enemy_collision(scene, player);
+void check_collisions(scene* scene) {
+    check_enemy_bullet_collision(scene, scene->player);
+    check_enemy_collision(scene, scene->player);
 }
 
-void draw_scene(scene* my_scene, player* my_player) {
+void draw_scene(scene* my_scene) {
 
     // draw the water_bg
     for (int i = 0; i < my_scene->bg_water_rect_capacity; i++)
@@ -213,12 +217,12 @@ void draw_scene(scene* my_scene, player* my_player) {
         update_enemy(my_scene->enemies[i]);
     }
     // drawn and update the player and his bullets
-    update_player(my_player);
+    update_player(my_scene->player);
     // check all collisions
-    check_collisions(my_scene, my_player);
+    check_collisions(my_scene, my_scene->player);
     // change player status like hp, lifes etc...
-    update_player_life(my_scene, my_player);
-    draw_ui(my_scene, my_player);
+    update_player_life(my_scene, my_scene->player);
+    draw_ui(my_scene, my_scene->player);
     spawn_enemy(my_scene);
     spawn_island(my_scene);
 }
