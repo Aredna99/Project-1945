@@ -58,6 +58,7 @@ Your plane will be able to shoot a bullet only after some time by pressing the c
 
 ### Player ![Player's plane](resources/assets/player/myplane_strip3.png)
 -Player movements: Arrow Keys
+
 -Shoot: Space bar/ X Key
 
 
