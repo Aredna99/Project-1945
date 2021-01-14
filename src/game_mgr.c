@@ -23,6 +23,16 @@ game_mgr* init_game() {
 
 void update_title_scene(game_mgr* game) {
     while (!game->quit) {
+        while (SDL_PollEvent(&event)) {
+            if (event.type == SDL_QUIT) {
+                game->quit = true;
+                break;
+            }
+            else if(event.key.keysym.sym == SDLK_ESCAPE) {
+                game->quit = true;
+                break;
+            }
+        } 
         update_utils(game->quit);
 
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);

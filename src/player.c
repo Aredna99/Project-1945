@@ -101,7 +101,7 @@ void player_input(player* pl) {
         {
             if(!pl->bullets[i]->bullet->is_active) {
                 if(pl->shoot_cd >= pl->default_shoot_cd){
-                    pl->shoot_cd -= pl->default_shoot_cd; 
+                    pl->shoot_cd = 0; 
                     player_shoot_input(pl->bullets[i]->bullet, pl->actor->rect, pl->actor->speed);
                     break;
                 }

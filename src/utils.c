@@ -8,16 +8,16 @@ void init_utils() {
 
 void update_utils(boolean* done) {
     //SDL_Event event;
-        while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_QUIT) {
-                *done = true;
-                break;
-            }
-            else if(event.key.keysym.sym == SDLK_ESCAPE) {
-                *done = true;
-                break;
-            }
-        }
+        // while (SDL_PollEvent(&event)) {
+        //     if (event.type == SDL_QUIT) {
+        //         *done = true;
+        //         break;
+        //     }
+        //     else if(event.key.keysym.sym == SDLK_ESCAPE) {
+        //         *done = true;
+        //         break;
+        //     }
+        // }
 
     keyboard_state = SDL_GetKeyboardState(NULL);
     last_count = curr_count;
@@ -28,7 +28,7 @@ void update_utils(boolean* done) {
 
     if (update_time >= 1.f) {
         update_time -= 1.f;
-        sprintf_s(title, sizeof(title), "1945 game!     Time: %.4f - Fps: %d", delta_time, fps);
+        sprintf_s(title, sizeof(title), "1945 game!");
         SDL_SetWindowTitle(window, title);
     }
 }

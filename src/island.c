@@ -24,7 +24,7 @@ island* create_island() {
     }
 
     set_island_spawnpoint(new_island);
-    new_island->actor->speed = 50;
+    new_island->actor->speed = 150;
     new_island->is_active = false;
 
     return new_island;
