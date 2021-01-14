@@ -1,6 +1,6 @@
 # Project 1945 by Aredna
 
-![Banner of the project](resources/assets/extra/Title.png)
+![banner project](resources/assets/extra/Title.png)
 
 Project 1945 is a game based on the old videogame [1945: The Final Front](https://www.youtube.com/watch?v=uBIbxobSUcY) of the 2002. It's a top down scroller game made with SDL2, CMake and programmed in C as a project of study for the Italian Videogames Academy for the 3rd year course of Videogames programming.
 
@@ -14,7 +14,7 @@ Install clang as compiler.
 Install CMake and use the compiling kit inside Visual Studio Code named amd64 to make builds.
 Inside Visual Studio Code make a Delete Cache and Reconfigure to refresh the project's paths.
 
-![Loading image](resources/assets/extra/Loading.gif)
+![loading image](resources/assets/extra/Loading.gif)
 
 ## Game Description
 In Project 1945 you will be able to play in a 640x480 resolution adventure.
@@ -36,16 +36,16 @@ In the game scene, on the bottom of the screen you will see an Info Panel about 
 - a Score Counter, in the bottom middle part of the screen:
 •) You will receive score points every time you destroy another plane or enemy bullets.
 
-![Info Panel](resources/assets/ui/bottom.png)
+![info panel](resources/assets/ui/bottom.png)
 
 Losing all your lifes will let the game restart, if you want to quit and close the game just press the "ESCAPE" button.
 During the game planes and islands will be spawned in the top part of the screen and they will move to the bottom part of the screen.
 
 
 ### There are 3 types of island and they are spawned at random. 
-. ![Island1](resources/assets/map/island1.png) 
-![Island2](resources/assets/map/island2.png) 
-![Island3](resources/assets/map/island3.png)
+![island1](resources/assets/map/island1.png) 
+![island2](resources/assets/map/island2.png) 
+![island3](resources/assets/map/island3.png)
 
 
 
@@ -58,7 +58,8 @@ During the game planes and islands will be spawned in the top part of the screen
 •) For someone shooting with the space bar could cause an anomaly for the movement caused by the keyboard called "key rollover" or "anti ghosting". So for someone with this kind of problem like me, you can shoot with the "X" key. 
 
 
-![Water background](resources/assets/player/explosion2_strip7.png)
+
+![player_bullet](resources/assets/player/bullet.png)
 
 ## Copyright
 Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) 
