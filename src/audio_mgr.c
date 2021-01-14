@@ -7,5 +7,5 @@ void init_audiomgr(audio_mgr* audiomgr){
     audiomgr->explosion_1 = Mix_LoadWAV("resources/assets/audio/snd_explosion1.wav");
     audiomgr->player_explosion = Mix_LoadWAV("resources/assets/audio/snd_explosion2.wav");
 
-    Mix_PlayMusic(audiomgr->bg_music, -1);
+    //Mix_PlayMusic(audiomgr->bg_music, -1);
 }

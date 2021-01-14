@@ -13,6 +13,7 @@ int fps;
 Uint64 curr_count;
 Uint64 last_count;
 Uint8* keyboard_state;
+SDL_Event event;
 
 void init_utils();
 void update_utils(boolean* done);

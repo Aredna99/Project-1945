@@ -16,6 +16,9 @@
     <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\font_mgr.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\game_mgr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\input.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -52,6 +55,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\font_mgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\game_mgr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\input.h">

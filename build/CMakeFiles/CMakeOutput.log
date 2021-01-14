@@ -9,7 +9,7 @@ The output was:
 Microsoft (R) Build Engine versione 16.8.2+25e4d540b per .NET Framework
 Copyright (C) Microsoft Corporation. Tutti i diritti sono riservati.
 
-Compilazione avviata 12/01/2021 17:50:35.
+Compilazione avviata 14/01/2021 10:55:15.
 Progetto "D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\build\CMakeFiles\3.19.1\CompilerIdC\CompilerIdC.vcxproj" sul nodo 1 (destinazioni predefinite).
 PrepareForBuild:
   Creazione directory "Debug\".
@@ -35,7 +35,7 @@ Compilazione completata.
     Avvisi: 0
     Errori: 0
 
-Tempo trascorso 00:00:01.55
+Tempo trascorso 00:00:02.44
 
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -47,14 +47,14 @@ The C compiler identification is MSVC, found in "D:/AIV/III°Anno/Progetti/Proje
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: D:/AIV/III°Anno/Progetti/Project-1945-by-Aredna/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):D:/Program Files (x86)/Visual Studio 2019/MSBuild/Current/Bin/MSBuild.exe cmTC_4d531.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versione 16.8.2+25e4d540b per .NET Framework
+Run Build Command(s):D:/Program Files (x86)/Visual Studio 2019/MSBuild/Current/Bin/MSBuild.exe cmTC_5adb4.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versione 16.8.2+25e4d540b per .NET Framework
 Copyright (C) Microsoft Corporation. Tutti i diritti sono riservati.
 
   Microsoft (R) C/C++ Optimizing Compiler versione 19.28.29334 per x64
-  Copyright (C) Microsoft Corporation. Tutti i diritti  sono riservati.
   CMakeCCompilerABI.c
-  cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4d531.dir\Debug\\" /Fd"cmTC_4d531.dir\Debug\vc142.pdb" /Gd /TC /errorReport:queue "D:\Program Files (x86)\CMAKE\share\cmake-3.19\Modules\CMakeCCompilerABI.c"
-  cmTC_4d531.vcxproj -> D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\build\CMakeFiles\CMakeTmp\Debug\cmTC_4d531.exe
+  Copyright (C) Microsoft Corporation. Tutti i diritti  sono riservati.
+  cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5adb4.dir\Debug\\" /Fd"cmTC_5adb4.dir\Debug\vc142.pdb" /Gd /TC /errorReport:queue "D:\Program Files (x86)\CMAKE\share\cmake-3.19\Modules\CMakeCCompilerABI.c"
+  cmTC_5adb4.vcxproj -> D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\build\CMakeFiles\CMakeTmp\Debug\cmTC_5adb4.exe
 
 
 

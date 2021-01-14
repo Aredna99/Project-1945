@@ -7,9 +7,13 @@ void init_utils() {
 }
 
 void update_utils(boolean* done) {
-    SDL_Event event;
+    //SDL_Event event;
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
+                *done = true;
+                break;
+            }
+            else if(event.key.keysym.sym == SDLK_ESCAPE) {
                 *done = true;
                 break;
             }

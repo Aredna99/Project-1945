@@ -6,17 +6,16 @@
 #include <utils.h>
 
 typedef struct {
-    SDL_Texture* texture;
-    SDL_Rect* rect;
-    SDL_Rect* anim_rect;
-    int anim_frames;            //number of frame for the caracther_sheet in the same row
-    int curr_anim_frame;        //actual frame of the character_sheet 
-    float max_anim_time;        //time for change frame
-    float curr_anim_time;       //
-    float speed;
-    int max_health;
-    int health;
-    float collider_radius;
+    SDL_Texture* texture;       //Texture of the object
+    SDL_Rect* rect;             //Rect for the position of the object
+    SDL_Rect* anim_rect;        //Rect for render the animation
+    int anim_frames;            //Number of frame for the caracther_sheet in the same row
+    int curr_anim_frame;        //Actual frame of the animation 
+    float max_anim_time;        //Time for change frame
+    float curr_anim_time;       //Current time of the animation
+    float speed;                //Speed for move the object
+    int max_health;             //Max health of the object
+    int health;                 //Actual health of the object
 } actor;
 
 int change_image(SDL_Rect* rect, int* anim_frame);

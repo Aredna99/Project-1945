@@ -1054,6 +1054,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\bullet.c" />
     <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\enemy.c" />
     <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\font_mgr.c" />
+    <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\game_mgr.c" />
     <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\input.c" />
     <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\island.c" />
     <ClCompile Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\src\main.c" />
@@ -1066,6 +1067,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\bullet.h" />
     <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\enemy.h" />
     <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\font_mgr.h" />
+    <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\game_mgr.h" />
     <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\input.h" />
     <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\island.h" />
     <ClInclude Include="D:\AIV\III°Anno\Progetti\Project-1945-by-Aredna\include\player.h" />

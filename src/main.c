@@ -1,9 +1,10 @@
 #define SDL_MAIN_HANDLED
 #include <SDL_mixer.h>
 #include <SDL_ttf.h>
-#include <scene.h>
 #include <time.h>
-#include <audio_mgr.h>
+#include "scene.h"
+#include "audio_mgr.h"
+#include "game_mgr.h"
 
 typedef struct {
     float x;
@@ -11,16 +12,16 @@ typedef struct {
 } vec2;
 
 int main() {
-    SDL_Init(SDL_INIT_VIDEO);
+    /*SDL_Init(SDL_INIT_VIDEO);
     srand(time(NULL));
     create_window();
     create_renderer();
 
     init_utils();
-    Init_FontMgr();
+    init_font_mgr();
     init_audiomgr(&audiomgr);
     
-    scene* my_scene = create_scene();
+    game_scene* my_scene = create_game_scene();
 
     boolean* done = false;   
     while (!done) {
@@ -39,7 +40,10 @@ int main() {
     
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);  
-    SDL_Quit();
+    SDL_Quit();*/
+    game_mgr* game = init_game();
+    update_title_scene(game);
+    //update_1945_game(game);
 
     return 0;
 }

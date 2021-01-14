@@ -4,9 +4,9 @@
 
 int change_image(SDL_Rect* rect, int* anim_frame) {
     *anim_frame += 1;
-    if(*anim_frame > 2) {
+    /*if(*anim_frame > 2) {
         *anim_frame = 0;
-    }
+    }*/
 
     rect->x = *anim_frame * rect->w;
 
@@ -21,7 +21,7 @@ void animate_rect(SDL_Rect* rect, int* max_frames, int* curr_frame, float* max_t
         *curr_time -= *max_time;
         change_image(rect, curr_frame);
 
-        if(*curr_frame > *max_frames) {
+        if(*curr_frame >= *max_frames) {
             *curr_frame = 0;
         }
 
