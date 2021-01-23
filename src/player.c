@@ -210,3 +210,20 @@ void reset_player(player* pl) {
         pl->is_dead = false;
     }
 }
+
+void destroy_player(player* pl) {
+
+    free(pl->actor->rect);
+    free(pl->actor->anim_rect);
+    free(pl->actor);
+    free(pl->rect_death);
+    free(pl->anim_rect_death);
+
+    for (int i = 0; i < pl->bullets_count; i++)
+    {
+        destroy_player_bullet(pl->bullets[i]);
+    }
+    free(pl->bullets);
+    
+    free(pl);
+}

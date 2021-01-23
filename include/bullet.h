@@ -22,8 +22,10 @@ typedef struct {
 
 player_bullet* create_player_bullet();
 enemy_bullet* create_enemy_bullet();
-void check_collision();
 void update_bullets_pos(bullet* bullet);
 void check_bullet_bounds(SDL_Rect* rect);
+void destroy_player_bullet(player_bullet* bullet);
+void destroy_enemy_bullet(enemy_bullet* bullet);
+
 
 #endif

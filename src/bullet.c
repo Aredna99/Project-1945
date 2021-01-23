@@ -66,6 +66,14 @@ void check_bullet_bounds(bullet* bullet) {
     }
 }
 
-void check_collision() {
+void destroy_player_bullet(player_bullet* bullet) {
+    free(bullet->bullet->rect);
+    free(bullet->bullet);
+    free(bullet);
+}
 
+void destroy_enemy_bullet(enemy_bullet* bullet) {
+    free(bullet->bullet->rect);
+    free(bullet->bullet);
+    free(bullet);
 }

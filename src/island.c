@@ -57,3 +57,9 @@ void update_island(island* island) {
         check_island_bounds(island);
     }
 }
+
+void destroy_island(island* island) {
+    free(island->actor->rect);
+    free(island->actor);
+    free(island);
+}

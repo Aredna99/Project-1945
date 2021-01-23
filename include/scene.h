@@ -59,5 +59,7 @@ void check_collisions(game_scene* scene);
 void player_add_score(game_scene* scene, int points);
 void draw_game_scene(game_scene* scene);
 void draw_title_scene(title_scene* scene, boolean* play, boolean* quit);
+void destroy_game_scene(game_scene* scene);
+void destroy_title_scene(title_scene* scene);
 
 #endif

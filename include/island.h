@@ -13,5 +13,6 @@ void instantiate_island(island* island);
 void island_movement(island* island);
 void check_island_bounds(island* island);
 void update_island(island* island);
+void destroy_island(island* island);
 
 #endif

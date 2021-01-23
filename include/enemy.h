@@ -36,5 +36,6 @@ void update_enemy_bullets(enemy* en);
 void update_enemy(enemy* en); 
 void enemy_take_damage(enemy* enemy, float damage);
 void update_enemy_death(enemy* enemy);
+void destroy_enemy(enemy* enemy);
 
 #endif

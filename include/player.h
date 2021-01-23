@@ -40,5 +40,6 @@ void player_take_damage(player* player, float damage);
 void draw_player(player* player);
 void reset_player(player* player);
 void update_player_death(player* player);
+void destroy_player(player* player);
 
 #endif

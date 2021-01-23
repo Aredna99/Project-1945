@@ -16,5 +16,6 @@ typedef struct {
 game_mgr* init_game();
 void update_title_scene(game_mgr* game);
 void update_1945_game();
+void destroy_game(game_mgr* game);
 
 #endif

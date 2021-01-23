@@ -163,3 +163,19 @@ void enemy_take_damage(enemy* enemy, float damage) {
         enemy->actor->health = enemy->actor->max_health;
     }
 }
+
+void destroy_enemy(enemy* en) {
+    free(en->actor->rect);
+    free(en->actor->anim_rect);
+    free(en->actor);
+    free(en->rect_death);
+    free(en->anim_rect_death);
+
+    for (int i = 0; i < en->bullets_count; i++)
+    {
+        destroy_enemy_bullet(en->bullets[i]);
+    }
+    free(en->bullets);
+    
+    free(en);
+}

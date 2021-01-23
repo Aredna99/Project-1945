@@ -138,8 +138,9 @@ void update_player_life(game_scene* my_scene) {
 
 void draw_ui(game_scene* my_scene) {
     SDL_RenderCopy(renderer, my_scene->bg_ui_bottom_texture, NULL, my_scene->bottom_ui_rect);
-    SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);   
+    SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
     SDL_RenderFillRect(renderer, my_scene->hp_bar_rect);
+
     for (int i = 0; i < my_scene->player->lifes; i++)
     {
         my_scene->ui_player_life_rect->x = (my_scene->ui_player_life_rect->w * i) + 12;
@@ -280,17 +281,33 @@ void draw_title_scene(title_scene* scene, boolean* play, boolean* quit) {
     }
 
     SDL_RenderCopy(renderer, scene->texture_bg, NULL, NULL);
-    write_title_scene(scene->rect_start_game, scene->rect_quit_game);
     draw_titles();
+}
 
-    // if(SDL_HasIntersection(scene->rect_mouse_pos, scene->rect_start_game)) {
-    //     if(event.type == SDL_MOUSEBUTTONDOWN) {
-    //         *play = true;
-    //     }
-    // }
-    // else if(SDL_HasIntersection(scene->rect_mouse_pos, scene->rect_quit_game)) {
-    //     if(event.type == SDL_MOUSEBUTTONDOWN) {
-    //         *quit = true;
-    //     }
-    // }
+void destroy_game_scene(game_scene* scene) {
+    destroy_player(scene->player);
+
+    for (int i = 0; i < scene->enemy_count; i++)
+    {
+        destroy_enemy(scene->enemies[i]);
+    }
+    free(scene->enemies);
+
+    for (int i = 0; i < scene->island_count; i++)
+    {
+        destroy_island(scene->islands[i]);
+    }
+    free(scene->islands);
+
+    free(scene->bottom_ui_rect);
+    //free(scene->ui_player_life_rect);
+    //free(scene->hp_bar_rect);
+    free(scene);
+}
+
+void destroy_title_scene(title_scene* scene) {
+    free(scene->rect_start_game);
+    free(scene->rect_quit_game);
+    free(scene->rect_mouse_pos);
+    free(scene);
 }

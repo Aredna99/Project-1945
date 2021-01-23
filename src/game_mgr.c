@@ -32,7 +32,8 @@ void update_title_scene(game_mgr* game) {
                 game->quit = true;
                 break;
             }
-        } 
+        }
+         
         update_utils(game->quit);
 
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
@@ -60,26 +61,33 @@ void update_title_scene(game_mgr* game) {
         SDL_RenderPresent(renderer);
     }
 
+    destroy_game(game);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);  
     SDL_Quit();
 }
 
 void update_1945_game(game_mgr* game) {
-    // while (!game->quit) {
-    //     update_utils(game->quit);
+    while (!game->quit) {
+        update_utils(game->quit);
 
-    //     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
-    //     SDL_RenderClear(renderer);
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+        SDL_RenderClear(renderer);
         
         draw_game_scene(game->game_scene);
 
-    //     SDL_Delay(11);
+        SDL_Delay(11);
 
-    //     SDL_RenderPresent(renderer);
-    // }
-    
-    // SDL_DestroyRenderer(renderer);
-    // SDL_DestroyWindow(window);  
-    // SDL_Quit();
+        SDL_RenderPresent(renderer);
+    }
+    destroy_game(game);
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);  
+    SDL_Quit();
+}
+
+void destroy_game(game_mgr* game) {
+    destroy_game_scene(game->game_scene);
+    destroy_title_scene(game->title_scene);
+    free(game);
 }
