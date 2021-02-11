@@ -1,4 +1,4 @@
-# Project 1945 by Aredna
+# Project 1945
 
 ![banner project](resources/assets/extra/Title.png)
 
@@ -33,7 +33,7 @@ In the game scene, on the bottom of the screen you will see an Info Panel about 
 •) Every time it is empty, you will lose 1 life.  
 •) You lose energy when you are hit by the enemy and his bullets.
 
-- a Score Counter, in the bottom middle part of the screen:
+- A Score Counter, in the bottom middle part of the screen:
 •) You will receive score points every time you destroy another plane or enemy bullets.
 
 ![info panel](resources/assets/ui/bottom.png)
@@ -54,7 +54,7 @@ During the game planes and islands will be spawned in the top part of the screen
 ### Player ![Player's plane](resources/assets/player/myplane_strip3.png)
 -Player movements: Arrow Keys
 
--Shoot: Space bar/ X Key
+- Shoot: Space bar/ X Key
 •) For someone shooting with the space bar could cause an anomaly for the movement caused by the keyboard called "key rollover" or "anti ghosting". So for someone with this kind of problem like me, you can shoot with the "X" key. 
 
 
